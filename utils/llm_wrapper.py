@@ -14,8 +14,11 @@ def query_llm(prompt: str, system_prompt: str = "") -> str:
             "stream": False,
         },
     )
-
+    print("RESPONSE", response)
     if response.status_code == 200:
-        return response.json().get("response", "").strip()
+        data = response.json()
+        print("✅ Model Output:", data.get("response"))
+        return data.get("response", "").strip()
+        # return response.json().get("response", "").strip()
     else:
         raise RuntimeError(f"Ollama error: {response.status_code} - {response.text}")

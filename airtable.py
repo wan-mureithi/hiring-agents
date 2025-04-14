@@ -9,7 +9,7 @@ API_KEY = os.getenv("AIRTABLE_API_KEY")
 BASE_ID = os.getenv("AIRTABLE_BASE_ID")
 TABLE_NAME = os.getenv("AIRTABLE_TABLE_NAME")
 
-table = Table(API_KEY, BASE_ID, "applicants")
+table = Table(API_KEY, BASE_ID, "recent")
 
 
 # Example: extract CV URL using regex
