@@ -1,17 +1,20 @@
-research_task:
+cv_scoring_task:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}.
+    Evaluate each resume independently and assign a CV rating based on the criteria.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+    A numerical score representing the resume's alignment with the predefined criteria.
+  agent: cv_scorer
 
-reporting_task:
+elo_comparison_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Perform pairwise comparisons of resumes to update their Elo scores.
   expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    Updated Elo scores reflecting the relative strengths of the compared resumes.
+  agent: elo_comparator
+
+criteria_update_task:
+  description: >
+    Update the evaluation criteria and weights for a specific role.
+  expected_output: >
+    An updated criteria set stored in the database.
+  agent: criteria_manager
