@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Query, HTTPException
 from airtable import get_all_records, get_record
 from cv_scoring import process_single_record, run_cv_scoring_pipeline
+from utils.pairwise_ranking import run_elo_match
 
 router = APIRouter()
 
@@ -39,4 +40,10 @@ def score_single_cv(record_id: str):
         raise HTTPException(status_code=404, detail="Record not found")
 
     result = process_single_record(record)
+    return result
+
+
+@router.post("/elo/rank/random")
+def rank_random_pair():
+    result = run_elo_match()
     return result

@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routes import router as api_router  # assuming routes.py is in the root
 
 app = FastAPI(
-    title="Hiring Agents API",
+    title="Hiring Automation API",
     description="Talent acquisition backend using LLMs + Airtable",
     version="0.1.0",
 )
