@@ -34,7 +34,11 @@ To kickstart your crew of AI agents and begin task execution, run this from the 
 ```bash
 $ crewai run
 ```
+To kickstart your API on swagger UI and begin task execution, run this from the root folder of your project:
 
+```bash
+$ uvicorn main:app --reload
+```
 This command initializes the hiring-agents Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.

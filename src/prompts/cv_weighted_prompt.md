@@ -8,11 +8,11 @@ Assign a score between **0 and 100** for each main criterion independently based
    - Programming ability (especially Python)
    - Experience in analytics, engineering, or AI/data solutions
 
-2. **High Potential and Brightness** (weight: 20%)
+2. **High Potential and Brightness** (weight: 30%)
    - Analytical mindset
    - Evidence of adaptability, initiative, or curiosity
 
-3. **Social Impact Orientation** (weight: 20%)
+3. **Social Impact Orientation** (weight: 10%)
    - Motivation to apply data/AI for meaningful social or financial problems
 
 ---
@@ -23,17 +23,17 @@ Assign a score between **0 and 100** for each main criterion independently based
 ---
 
 ## Output Instructions:
-- `final_score` must be a **weighted sum** of the 3 scores, max value **100**
-- Return a single-line **valid JSON** object only — no markdown or explanation
-- Include a short `"reasoning"` field (1–2 sentences max) based on the scores
+- `final_score` must be a **concrete numeric value** only — not a formula or calculation.
+- **You must compute all scores before returning the output.**
+- Return a single-line **valid JSON** object only — no markdown or explanation.
+- Include a short `"reasoning"` field (1–2 sentences max) based on the scores.
 
-Here is a JSON object example:
-
+Example structure (note: do NOT copy these exact scores):
 ```json
 {
-  "technical_experience": 75,
-  "high_potential": 60,
-  "social_impact": 40,
-  "final_score": 66,
+  "technical_experience": 40,
+  "high_potential": 20,
+  "social_impact": 4,
+  "final_score": 64,
   "reasoning": "The candidate demonstrated strong technical skills but had limited direct experience in social impact."
 }

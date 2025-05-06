@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import router as api_router  # assuming routes.py is in the root
+from routes import router as api_router
 
 app = FastAPI(
     title="Hiring Automation API",
