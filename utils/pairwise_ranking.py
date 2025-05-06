@@ -76,7 +76,7 @@ def choose_winner(app1, app2):
 def run_elo_match():
     eligible = get_eligible_applicants()
     app1, app2 = select_random_pair(eligible)
-    # print("APPP", app1, app2)
+    print("APPP", app1, app2)
     if not app1 or not app2:
         return {"message": "Not enough candidates for Elo ranking"}
 
@@ -98,4 +98,10 @@ def run_elo_match():
             },
         )
 
-    return {"winner": winner["name"], "loser": loser["name"], "updated_scores": updated}
+    return {
+        "message": f'Comparing "{winner["name"]}" and "{loser["name"]}"',
+        "winner": winner["name"],
+        "loser": loser["name"],
+        "reasoning": reasoning,
+        "updated_scores": updated,
+    }
